@@ -1,0 +1,5 @@
+FROM golang:1.16.2-alpine3.13 AS GO_BUILD
+RUN apk add build-base
+WORKDIR testdir
+COPY . .
+ENTRYPOINT ["go", "test", "-v", "./..."]
